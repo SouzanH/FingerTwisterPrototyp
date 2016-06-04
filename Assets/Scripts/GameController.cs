@@ -65,7 +65,7 @@ public class GameController : MonoBehaviour
     public void PlayerReady()
     {
         PlayersReady++;
-        if (PlayersReady == PlayerCounter.PlayerCount)
+        //if (PlayersReady == PlayerCounter.PlayerCount)
             Go();
     }
 
@@ -141,7 +141,8 @@ public class GameController : MonoBehaviour
 		countdownText.text = "1";		
 		CountdownBeep.Play ();
         yield return new WaitForSeconds(1);
-        countdownText.text = "Go";
+		countdownText.text = "Go";
+		CountdownBeep.Play ();
         Handheld.Vibrate();
         foreach (GameObject start in Starts)
             start.GetComponent<StartController>().Go();
