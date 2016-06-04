@@ -44,6 +44,7 @@ public class GameController : MonoBehaviour
         StartMenu.SetActive(false);
         Starts = PlayerInstantiator.InstantiateStarts(StartPrefab, StartMaterial, PlayerCounter.PlayerCount, this);
         InstantiatePoints();
+		BackgroundSound.Play ();
     }
 
     public float GetRandomX()

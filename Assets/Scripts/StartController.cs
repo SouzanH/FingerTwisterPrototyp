@@ -9,11 +9,11 @@ public class StartController : MonoBehaviour
     public GameObject PointPrefab;
     public GameObject ParticleSys;
 
+    public string POINT_TAG = "Point";
+
 	public AudioSource WinSound;
 	public AudioSource DestroySound;
 	public AudioSource PointCollectedSound;
-
-    public string POINT_TAG = "Point";
 
     public GameController MainGameController {
         set {
