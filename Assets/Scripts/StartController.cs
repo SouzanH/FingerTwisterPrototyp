@@ -11,6 +11,10 @@ public class StartController : MonoBehaviour
 
     public string POINT_TAG = "Point";
 
+	public AudioSource WinSound;
+	public AudioSource DestroySound;
+	public AudioSource PointCollectedSound;
+
     public GameController MainGameController {
         set {
             MGameController = value;
@@ -91,14 +95,17 @@ public class StartController : MonoBehaviour
         if (pointController == null)
             return;
         if (pointController.Tag.Equals(POINT_TAG + PlayerN)) {
+			PointCollectedSound.Play ();
             Destroy(other.gameObject);
             PointsCollected++;
             if (PointsCollected == PointsCounter) {
+				WinSound.Play ();
                 MGameController.PlayerWon();
                 Ready = false;
                 ParticleSys.SetActive(true);
             }
         } else {
+			DestroySound.Play ();
             Destroy(gameObject);
             Handheld.Vibrate();
             MGameController.PlayerDestroyed();

@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
     public GameObject StartPrefab;
     public Material StartMaterial;
     public int PointCount = 4;
+	public AudioSource BackgroundSound;
+	public AudioSource CountdownBeep;
 
     public float HalfFrustumHeight {
         get {
@@ -41,6 +43,7 @@ public class GameController : MonoBehaviour
         StartMenu.SetActive(false);
         Starts = PlayerInstantiator.InstantiateStarts(StartPrefab, StartMaterial, PlayerCounter.PlayerCount, this);
         InstantiatePoints();
+		BackgroundSound.Play ();
     }
 
     public float GetRandomX()
@@ -106,10 +109,13 @@ public class GameController : MonoBehaviour
         countdownText.text = "3";
         Debug.Log("go");
         CountdownCanvas.SetActive(true);
+		CountdownBeep.Play ();
         yield return new WaitForSeconds(1);
         countdownText.text = "2";
+		CountdownBeep.Play ();
         yield return new WaitForSeconds(1);
         countdownText.text = "1";
+		CountdownBeep.Play ();
         yield return new WaitForSeconds(1);
         countdownText.text = "Go";
         Handheld.Vibrate();
