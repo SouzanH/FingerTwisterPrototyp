@@ -132,7 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PointPrefab: {fileID: 151926, guid: c267caa9fe8cb4246bfe00ff051fdfe8, type: 2}
   ParticleSys: {fileID: 130654}
-  DieObject: {fileID: 0}
+  DieObject: {fileID: 1000013347052978, guid: 1b28b584384d14b91bde66b9c415b1f1, type: 2}
   POINT_TAG: Point
   WinSound: {fileID: 82000013672515488}
   PointCollectedSound: {fileID: 82000010353842892}

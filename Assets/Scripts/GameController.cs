@@ -100,7 +100,7 @@ public class GameController : MonoBehaviour
 		var pointsX = Mathf.Ceil(Mathf.Sqrt(numberOfPoints * CurrentCamera.aspect));
 		var pointsY = Mathf.Ceil(numberOfPoints / pointsX);
 
-		var radius = Mathf.Min (FrustumWidth / pointsX, FrustumHeight / pointsY) * 0.2f;
+		var radius = Mathf.Min (FrustumWidth / pointsX, FrustumHeight / pointsY) * 0.5f;
 
 		var freePoints = new List<Vector2> (numberOfPoints);
 
