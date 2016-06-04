@@ -97,7 +97,7 @@ public class GameController : MonoBehaviour
 		var pointsX = Mathf.Ceil(Mathf.Sqrt(numberOfPoints * CurrentCamera.aspect));
 		var pointsY = Mathf.Ceil(numberOfPoints / pointsX);
 
-		var radius = Mathf.Min (FrustumWidth / pointsX, FrustumHeight / pointsY) * 0.6f;
+		var radius = Mathf.Min (FrustumWidth / pointsX, FrustumHeight / pointsY) * 0.2f;
 
 		var freePoints = new List<Vector2> (numberOfPoints);
 
@@ -107,10 +107,9 @@ public class GameController : MonoBehaviour
 		var diffX = FrustumWidth / X / 2;
 		var diffY = FrustumHeight / Y / 2;
 
-		for (int i = -X; i < X; i++) {
-			for (int j = -Y; j < Y; j++) {
+		for (int i = -X + 1; i < X; i++) {
+			for (int j = -Y + 1; j < Y; j++) {
 				freePoints.Add (new Vector2 (i * diffX, j * diffY));
-				GameObject.CreatePrimitive (PrimitiveType.Sphere);
 			}
 		}
 
