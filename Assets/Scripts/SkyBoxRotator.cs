@@ -3,7 +3,7 @@ using System.Collections;
 
 public class SkyBoxRotator : MonoBehaviour {
 
-	Vector3 rotation = new Vector3 (0, 0, 0.005f);
+	Vector3 rotation = new Vector3 (0, 0, 0.01f);
 	//Vector3 rotation = new Vector3 (0.01f, 0, 0);
 	
 	void Update () {
