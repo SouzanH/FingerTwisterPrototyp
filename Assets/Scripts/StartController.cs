@@ -8,11 +8,11 @@ public class StartController : MonoBehaviour
 
     public GameObject PointPrefab;
     public GameObject ParticleSys;
+	public GameObject DieObject;
 
     public string POINT_TAG = "Point";
 
 	public AudioSource WinSound;
-	public AudioSource DestroySound;
 	public AudioSource PointCollectedSound;
 
     public GameController MainGameController {
@@ -109,7 +109,7 @@ public class StartController : MonoBehaviour
                 ParticleSys.SetActive(true);
             }
         } else {
-			DestroySound.Play ();
+			Instantiate (DieObject);
             Destroy(gameObject);
             Handheld.Vibrate();
             MGameController.PlayerDestroyed();

@@ -65,7 +65,7 @@ public class GameController : MonoBehaviour
     public void PlayerReady()
     {
         PlayersReady++;
-        if (PlayersReady == PlayerCounter.PlayerCount)
+        //if (PlayersReady == PlayerCounter.PlayerCount)
             Go();
     }
 
@@ -100,7 +100,7 @@ public class GameController : MonoBehaviour
 		var pointsX = Mathf.Ceil(Mathf.Sqrt(numberOfPoints * CurrentCamera.aspect));
 		var pointsY = Mathf.Ceil(numberOfPoints / pointsX);
 
-		var radius = Mathf.Min (FrustumWidth / pointsX, FrustumHeight / pointsY) * 0.2f;
+		var radius = Mathf.Min (FrustumWidth / pointsX, FrustumHeight / pointsY) * 0.5f;
 
 		var freePoints = new List<Vector2> (numberOfPoints);
 
@@ -141,7 +141,8 @@ public class GameController : MonoBehaviour
 		countdownText.text = "1";		
 		CountdownBeep.Play ();
         yield return new WaitForSeconds(1);
-        countdownText.text = "Go";
+		countdownText.text = "Go";
+		CountdownBeep.Play ();
         Handheld.Vibrate();
         foreach (GameObject start in Starts)
             start.GetComponent<StartController>().Go();
