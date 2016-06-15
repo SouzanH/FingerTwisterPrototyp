@@ -65,7 +65,7 @@ public class GameController : MonoBehaviour
     public void PlayerReady()
     {
         PlayersReady++;
-        if (PlayersReady == PlayerCounter.PlayerCount)
+        //if (PlayersReady == PlayerCounter.PlayerCount)
             Go();
     }
 
